@@ -1,0 +1,12 @@
+---
+- name: provision
+  hosts: all
+  remote_user: ubuntu
+  roles:
+    - rvm_io.ruby
+    - nginx-passenger
+    - role: ssl
+      when: use_ssl
+      domainsets:
+        - domains:
+          - "{{ webserver_name }}"

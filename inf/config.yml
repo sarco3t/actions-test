@@ -1,0 +1,12 @@
+all:
+  vars:
+    ansible_user: ubuntu
+    # The following vars apply globally; additional config is in group_vars/all.
+    app_name: myapp            # name of application
+    ruby_version: ruby-2.5.1    # version of Ruby
+production:
+  hosts:
+    ec2-34-211-106-126.us-west-2.compute.amazonaws.com
+  vars:
+    use_ssl: true   
+    webserver_name:  ec2-34-211-106-126.us-west-2.compute.amazonaws.com  # Virtual server name for Nginx config 

@@ -4,6 +4,6 @@
         - role: ansistrano.deploy
           vars:
             ansistrano_deploy_from: "{{ playbook_dir }}/../" # Where my local project is (relative or absolute path)
-            ansistrano_deploy_to: "/home/ubuntu/apps"
+            ansistrano_deploy_to: "/home/ubuntu/my_app"
             ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/hooks/after-symlink-tasks.yml"
             ansistrano_after_update_code_tasks_file: "{{ playbook_dir }}/hooks/after-update-code-tasks.yml"
