@@ -18,7 +18,7 @@ jobs:
     #     gem install bundler
     #     bundle install --jobs 4 --retry 3
     #     bundle exec rake
-    - run: echo "${{ secrets.KEYFILE_VAULT_PASS }}" > $GITHUB_DIR/../key.pem
+    - run: echo "${{ secrets.KEYFILE_VAULT_PASS }}" > $GITHUB_DIR/key.pem
       env:
         GITHUB_DIR: ${{github.workspace }}
     - uses: saubermacherag/ansible-playbook-docker-action@v1.2
@@ -30,4 +30,4 @@ jobs:
         inventoryFile: 'inf/hosts'
         requirementsFile: 'inf/requirements.yml'
         rolesPath: "/github/workspace/inf/roles"
-        keyFile: "$GITHUB_DIR/../key.pem"
+        keyFile: "$GITHUB_DIR/key.pem"
