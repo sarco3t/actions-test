@@ -1,0 +1,32 @@
+name: Test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # - name: Set up Ruby
+    #   uses: actions/setup-ruby@v1
+    #   with:
+    #     ruby-version: 2.5.1
+    # - name: Build and test with Rake
+    #   run: |
+    #     gem install bundler
+    #     bundle install --jobs 4 --retry 3
+    #     bundle exec rake
+    - run: echo "${{ secrets.SSH_KEY }}" > $GITHUB_DIR/../key.pem
+      env:
+        GITHUB_DIR: ${{github.workspace }}
+    - uses: saubermacherag/ansible-playbook-docker-action@v1.2
+      env:
+        GITHUB_DIR: ${{ github.workspace }}
+      with:
+        playbookName: 'inf/deploy.yml'
+        inventoryFile: 'inf/hosts'
+        requirementsFile: 'inf/requirements.yml'
+        rolesPath: "/github/workspace/inf/roles"
+        keyFile: "$GITHUB_DIR/../key.pem"
