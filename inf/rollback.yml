@@ -1,0 +1,8 @@
+ 
+---
+    - name: Rollback
+      hosts: app
+      vars:
+        ansistrano_deploy_to: "/home/ubuntu/apps"
+      roles:
+        - { role: ansistrano.rollback }
