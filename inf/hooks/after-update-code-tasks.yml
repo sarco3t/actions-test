@@ -1,2 +1,2 @@
 - name: Install deps
-  command: bash -lc "cd {{ ansistrano_release_path.stdout }} && {{ rvm1_install_path }}/wrappers/{{ item.stdout }}/bundle install --deployment --without development test"
+  command: bash -lc "cd {{ ansistrano_release_path.stdout }} && {{ rvm1_install_path }}/wrappers/{{ ruby_version }}/bundle install --deployment --without development test"
