@@ -24,6 +24,7 @@ jobs:
     - uses: saubermacherag/ansible-playbook-docker-action@v1.2
       env:
         GITHUB_DIR: ${{ github.workspace }}
+        ANSIBLE_HOST_KEY_CHECKING: False
       with:
         playbookName: 'inf/deploy.yml'
         inventoryFile: 'inf/hosts'
