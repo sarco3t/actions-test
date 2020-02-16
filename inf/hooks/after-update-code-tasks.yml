@@ -1,2 +1,2 @@
 - name: Install deps
-    shell: bundle install --deployment --without development test
+  shell: bundle install --deployment --without development test
