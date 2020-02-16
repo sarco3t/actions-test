@@ -18,7 +18,7 @@ jobs:
     #     gem install bundler
     #     bundle install --jobs 4 --retry 3
     #     bundle exec rake
-    - run: echo "${{ secrets.SSH_KEY }}" > $GITHUB_DIR/../key.pem
+    - run: echo "${{ secrets.KEYFILE_VAULT_PASS }}" > $GITHUB_DIR/../key.pem
       env:
         GITHUB_DIR: ${{github.workspace }}
     - uses: saubermacherag/ansible-playbook-docker-action@v1.2
