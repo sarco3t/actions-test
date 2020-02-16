@@ -1,2 +1,2 @@
 [app]
-ec2-34-211-106-126.us-west-2.compute.amazonaws.com
+ec2-34-211-106-126.us-west-2.compute.amazonaws.com ansible_user=ubuntu
